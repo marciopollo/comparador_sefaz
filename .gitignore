@@ -1,0 +1,45 @@
+# ⛔ Ignorar ambiente virtual
+.venv/
+venv/
+env/
+
+# 🔒 Ignorar arquivos de credenciais
+*.env
+.env.*
+
+# 🚫 Ignorar arquivos temporários do sistema
+.DS_Store
+Thumbs.db
+
+# 💥 Ignorar arquivos de cache Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# 📦 Ignorar dependências instaladas localmente
+*.egg-info/
+.eggs/
+*.egg
+pip-log.txt
+pip-delete-this-directory.txt
+
+# 🗑️ Ignorar arquivos temporários de editor
+.vscode/
+.idea/
+*.swp
+
+# 📁 Arquivos de saída
+*.xlsx
+*.csv
+*.xls
+*.log
+*.tmp
+
+# 📦 PyInstaller output
+dist/
+build/
+*.spec
+
+# 🔄 Arquivos de Streamlit temporários
+.streamlit/config.toml
+.streamlit/secrets.toml
