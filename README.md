@@ -12,3 +12,5 @@ Este aplicativo permite comparar arquivos CSV da SEFAZ e de ERPs de clientes par
 ## ▶️ Executando localmente
 
 1. Clone o repositório:
+
+Link_teste: https://pollo-comparador-sefaz.streamlit.app/
