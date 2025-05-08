@@ -25,14 +25,6 @@ def pad_numero(numero):
     numero = limpar_texto(numero)
     return numero.lstrip('0')
 
-def ler_csv_seguro(uploaded_file, nome_arquivo):
-    for encoding in ["utf-8-sig", "latin1", "cp1252"]:
-        try:
-            return pd.read_csv(uploaded_file, sep=";", encoding=encoding, engine="python", dtype=str, index_col=False)
-        except UnicodeDecodeError:
-            continue
-    raise ValueError(f"Não foi possível ler o arquivo {nome_arquivo}. Verifique a codificação.")
-
 # === Etapa 1: Upload dos arquivos ===
 with st.form("upload_form"):
     st.subheader("1️⃣ Enviar arquivos CSV")
@@ -42,8 +34,8 @@ with st.form("upload_form"):
 
 if submitted and arquivo_sefaz and arquivo_cliente:
     try:
-        sefaz = ler_csv_seguro(arquivo_sefaz, "Sefaz")
-        cliente = ler_csv_seguro(arquivo_cliente, "Cliente")
+        sefaz = pd.read_csv(arquivo_sefaz, sep=";", encoding="utf-8-sig", engine="python", dtype=str, index_col=False)
+        cliente = pd.read_csv(arquivo_cliente, sep=";", encoding="utf-8-sig", engine="python", dtype=str, index_col=False)
 
         sefaz.columns = sefaz.columns.str.strip()
         cliente.columns = cliente.columns.str.strip()
